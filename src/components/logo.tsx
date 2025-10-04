@@ -1,13 +1,18 @@
 import { cn } from "@/lib/utils";
 
-const Logo = () => {
+interface LogoProps {
+  isScrolled?: boolean;
+}
+
+const Logo = ({ isScrolled = false }: LogoProps) => {
   const brandName = "AWKWARD";
 
   return (
     <div
       className={cn(
-        "font-headline text-2xl font-bold tracking-wider group",
-        "relative inline-block cursor-pointer"
+        "font-headline font-bold tracking-wider group",
+        "relative inline-block cursor-pointer transition-all duration-300",
+        isScrolled ? "text-xl" : "text-2xl"
       )}
       aria-label="AWKWARD Home"
     >

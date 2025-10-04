@@ -27,10 +27,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
           <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl">
-            This is awkward.
+            Define Your Awkward
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            But it works. A high-fashion brand that celebrates nonconformity.
+            A high-fashion brand that celebrates nonconformity.
           </p>
           <Button asChild size="lg" className="mt-8">
             <Link href="/shop">Shop Now</Link>

@@ -16,10 +16,7 @@ export function ContactDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="relative overflow-hidden group">
-            Contact
-            <span className="absolute w-full h-0.5 bg-primary bottom-0 left-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-        </Button>
+        <Button variant="default">Contact</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>

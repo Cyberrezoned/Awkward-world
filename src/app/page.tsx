@@ -16,6 +16,7 @@ import {
 import { useAppState } from '@/hooks/use-app-state';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function WelcomePage() {
   const router = useRouter();
@@ -110,9 +111,107 @@ export default function WelcomePage() {
                 <SelectValue placeholder="Location" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="us">United States</SelectItem>
-                <SelectItem value="gb">United Kingdom</SelectItem>
-                <SelectItem value="ca">Canada</SelectItem>
+                <ScrollArea className="h-72 w-full">
+                  <SelectItem value="us">United States</SelectItem>
+                  <SelectItem value="ca">Canada</SelectItem>
+                  <SelectItem value="gb">United Kingdom</SelectItem>
+                  <SelectItem value="au">Australia</SelectItem>
+                  <SelectItem value="de">Germany</SelectItem>
+                  <SelectItem value="fr">France</SelectItem>
+                  <SelectItem value="jp">Japan</SelectItem>
+                  <SelectItem value="cn">China</SelectItem>
+                  <SelectItem value="in">India</SelectItem>
+                  <SelectItem value="br">Brazil</SelectItem>
+                  <SelectItem value="za">South Africa</SelectItem>
+                  <SelectItem value="af">Afghanistan</SelectItem>
+                  <SelectItem value="al">Albania</SelectItem>
+                  <SelectItem value="dz">Algeria</SelectItem>
+                  <SelectItem value="ar">Argentina</SelectItem>
+                  <SelectItem value="am">Armenia</SelectItem>
+                  <SelectItem value="at">Austria</SelectItem>
+                  <SelectItem value="az">Azerbaijan</SelectItem>
+                  <SelectItem value="bh">Bahrain</SelectItem>
+                  <SelectItem value="bd">Bangladesh</SelectItem>
+                  <SelectItem value="by">Belarus</SelectItem>
+                  <SelectItem value="be">Belgium</SelectItem>
+                  <SelectItem value="bo">Bolivia</SelectItem>
+                  <SelectItem value="ba">Bosnia and Herzegovina</SelectItem>
+                  <SelectItem value="bg">Bulgaria</SelectItem>
+                  <SelectItem value="cl">Chile</SelectItem>
+                  <SelectItem value="co">Colombia</SelectItem>
+                  <SelectItem value="cr">Costa Rica</SelectItem>
+                  <SelectItem value="hr">Croatia</SelectItem>
+                  <SelectItem value="cu">Cuba</SelectItem>
+                  <SelectItem value="cy">Cyprus</SelectItem>
+                  <SelectItem value="cz">Czech Republic</SelectItem>
+                  <SelectItem value="dk">Denmark</SelectItem>
+                  <SelectItem value="ec">Ecuador</SelectItem>
+                  <SelectItem value="eg">Egypt</SelectItem>
+                  <SelectItem value="ee">Estonia</SelectItem>
+                  <SelectItem value="fi">Finland</SelectItem>
+                  <SelectItem value="ge">Georgia</SelectItem>
+                  <SelectItem value="gr">Greece</SelectItem>
+                  <SelectItem value="hu">Hungary</SelectItem>
+                  <SelectItem value="is">Iceland</SelectItem>
+                  <SelectItem value="id">Indonesia</SelectItem>
+                  <SelectItem value="ir">Iran</SelectItem>
+                  <SelectItem value="iq">Iraq</SelectItem>
+                  <SelectItem value="ie">Ireland</SelectItem>
+                  <SelectItem value="il">Israel</SelectItem>
+                  <SelectItem value="it">Italy</SelectItem>
+                  <SelectItem value="jm">Jamaica</SelectItem>
+                  <SelectItem value="jo">Jordan</SelectItem>
+                  <SelectItem value="kz">Kazakhstan</SelectItem>
+                  <SelectItem value="ke">Kenya</SelectItem>
+                  <SelectItem value="kw">Kuwait</SelectItem>
+                  <SelectItem value="lv">Latvia</SelectItem>
+                  <SelectItem value="lb">Lebanon</SelectItem>
+                  <SelectItem value="lt">Lithuania</SelectItem>
+                  <SelectItem value="lu">Luxembourg</SelectItem>
+                  <SelectItem value="my">Malaysia</SelectItem>
+                  <SelectItem value="mx">Mexico</SelectItem>
+                  <SelectItem value="md">Moldova</SelectItem>
+                  <SelectItem value="mn">Mongolia</SelectItem>
+                  <SelectItem value="me">Montenegro</SelectItem>
+                  <SelectItem value="ma">Morocco</SelectItem>
+                  <SelectItem value="np">Nepal</SelectItem>
+                  <SelectItem value="nl">Netherlands</SelectItem>
+                  <SelectItem value="nz">New Zealand</SelectItem>
+                  <SelectItem value="ng">Nigeria</SelectItem>
+                  <SelectItem value="mk">North Macedonia</SelectItem>
+                  <SelectItem value="no">Norway</SelectItem>
+                  <SelectItem value="om">Oman</SelectItem>
+                  <SelectItem value="pk">Pakistan</SelectItem>
+                  <SelectItem value="pa">Panama</SelectItem>
+                  <SelectItem value="py">Paraguay</SelectItem>
+                  <SelectItem value="pe">Peru</SelectItem>
+                  <SelectItem value="ph">Philippines</SelectItem>
+                  <SelectItem value="pl">Poland</SelectItem>
+                  <SelectItem value="pt">Portugal</SelectItem>
+                  <SelectItem value="qa">Qatar</SelectItem>
+                  <SelectItem value="ro">Romania</SelectItem>
+                  <SelectItem value="ru">Russia</SelectItem>
+                  <SelectItem value="sa">Saudi Arabia</SelectItem>
+                  <SelectItem value="rs">Serbia</SelectItem>
+                  <SelectItem value="sg">Singapore</SelectItem>
+                  <SelectItem value="sk">Slovakia</SelectItem>
+                  <SelectItem value="si">Slovenia</SelectItem>
+                  <SelectItem value="kr">South Korea</SelectItem>
+                  <SelectItem value="es">Spain</SelectItem>
+                  <SelectItem value="lk">Sri Lanka</SelectItem>
+                  <SelectItem value="se">Sweden</SelectItem>
+                  <SelectItem value="ch">Switzerland</SelectItem>
+                  <SelectItem value="sy">Syria</SelectItem>
+                  <SelectItem value="tw">Taiwan</SelectItem>
+                  <SelectItem value="th">Thailand</SelectItem>
+                  <SelectItem value="tr">Turkey</SelectItem>
+                  <SelectItem value="ua">Ukraine</SelectItem>
+                  <SelectItem value="ae">United Arab Emirates</SelectItem>
+                  <SelectItem value="uy">Uruguay</SelectItem>
+                  <SelectItem value="uz">Uzbekistan</SelectItem>
+                  <SelectItem value="ve">Venezuela</SelectItem>
+                  <SelectItem value="vn">Vietnam</SelectItem>
+                </ScrollArea>
               </SelectContent>
             </Select>
           </div>

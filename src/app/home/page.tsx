@@ -53,9 +53,12 @@ export default function HomePage() {
 
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
-          <h2 className="mb-8 text-center font-headline text-4xl md:text-5xl">
-            Just For You
-          </h2>
+          <div className="text-center mb-8">
+            <h2 className="text-center font-headline text-4xl md:text-5xl">
+              Just For You
+            </h2>
+            <p className="text-lg text-muted-foreground mt-2">✨ Styled by AI, inspired by your taste ✨</p>
+          </div>
           <PersonalizedRecommendations />
         </div>
       </section>

@@ -14,6 +14,7 @@ export default function PersonalizedRecommendations() {
   useEffect(() => {
     async function fetchRecommendations() {
       const history = getBrowsingHistory();
+      // Only fetch if there's history, but show the component either way
       if (history.length > 0) {
         const recommendedProducts = await getPersonalizedRecommendations(history);
         setRecommendations(recommendedProducts);
@@ -40,8 +41,9 @@ export default function PersonalizedRecommendations() {
 
   if (recommendations.length === 0) {
     return (
-      <div className="text-center text-muted-foreground">
-        <p>Browse some products to see personalized recommendations here!</p>
+      <div className="text-center text-muted-foreground py-8">
+        <p className="text-lg">Browse some products to see your personalized recommendations here!</p>
+        <p className="text-sm">Our AI is ready to find your next favorite piece.</p>
       </div>
     );
   }

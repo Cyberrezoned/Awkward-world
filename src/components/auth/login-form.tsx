@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useForm } from "react-hook-form";
@@ -34,6 +35,8 @@ import {
 import { errorEmitter } from "@/firebase/error-emitter";
 import { AuthError } from "@/firebase/errors";
 import { resetPassword } from "@/app/auth/actions";
+import { KeyRound, Mail } from "lucide-react";
+import { Icons } from "../icons";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -167,7 +170,10 @@ export function LoginForm() {
                         </div>
                         <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction type="submit" disabled={isResetting}>{isResetting ? "Sending..." : "Send Reset Link"}</AlertDialogAction>
+                        <AlertDialogAction type="submit" disabled={isResetting}>
+                            <Mail className="mr-2 h-4 w-4" />
+                            {isResetting ? "Sending..." : "Send Reset Link"}
+                        </AlertDialogAction>
                         </AlertDialogFooter>
                         </form>
                         </Form>
@@ -182,9 +188,11 @@ export function LoginForm() {
           )}
         />
         <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+          <KeyRound className="mr-2 h-4 w-4" />
           {form.formState.isSubmitting ? 'Logging in...' : 'Login'}
         </Button>
         <Button variant="outline" className="w-full" onClick={handleGoogleLogin} type="button">
+          <Icons.google className="mr-2 h-4 w-4" />
           Login with Google
         </Button>
       </form>

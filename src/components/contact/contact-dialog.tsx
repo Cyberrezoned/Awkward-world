@@ -11,12 +11,16 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ContactForm } from "./contact-form";
+import { Mail } from "lucide-react";
 
 export function ContactDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="default">Contact</Button>
+        <Button variant="default">
+          <Mail className="mr-2 h-4 w-4" />
+          Contact
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>

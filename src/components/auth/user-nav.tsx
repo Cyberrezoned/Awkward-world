@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -19,6 +20,7 @@ import {
   import { useUser, useAuth } from "@/firebase";
   import { useRouter } from "next/navigation";
   import { signOut } from "firebase/auth";
+import { LogOut, Package, Settings, User as UserIcon } from "lucide-react";
   
   export function UserNav() {
     const user = useUser();
@@ -68,18 +70,22 @@ import {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
-              Profile
+              <UserIcon className="mr-2 h-4 w-4" />
+              <span>Profile</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              Orders
+              <Package className="mr-2 h-4 w-4" />
+              <span>Orders</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              Settings
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout}>
-            Log out
+            <LogOut className="mr-2 h-4 w-4" />
+            <span>Log out</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

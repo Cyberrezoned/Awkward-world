@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -8,6 +9,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 import { useCart } from '@/hooks/use-cart';
+import { ShoppingBag } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -60,7 +62,10 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
       <div className="absolute inset-x-0 bottom-4 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button onClick={handleAddToCart} variant="secondary" className="text-secondary-foreground">Add to Bag - ${product.price.toFixed(2)}</Button>
+          <Button onClick={handleAddToCart} variant="secondary" className="text-secondary-foreground">
+            <ShoppingBag className="mr-2 h-4 w-4" />
+            Add to Bag - ${product.price.toFixed(2)}
+          </Button>
       </div>
       <div className="mt-4 flex justify-between">
         <div>

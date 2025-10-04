@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useForm } from "react-hook-form";
@@ -19,6 +20,8 @@ import {
 } from "@/components/ui/form";
 import { errorEmitter } from "@/firebase/error-emitter";
 import { AuthError } from "@/firebase/errors";
+import { UserPlus } from "lucide-react";
+import { Icons } from "../icons";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -120,9 +123,11 @@ export function SignupForm() {
           )}
         />
         <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+            <UserPlus className="mr-2 h-4 w-4" />
           {form.formState.isSubmitting ? 'Creating account...' : 'Create an account'}
         </Button>
         <Button variant="outline" className="w-full" onClick={handleGoogleSignup} type="button">
+            <Icons.google className="mr-2 h-4 w-4" />
           Sign up with Google
         </Button>
       </form>

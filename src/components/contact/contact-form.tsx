@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactEmail } from "@/app/contact/actions";
+import { Send } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -107,6 +108,7 @@ export function ContactForm() {
           className="w-full"
           disabled={form.formState.isSubmitting}
         >
+          <Send className="mr-2 h-4 w-4" />
           {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </form>

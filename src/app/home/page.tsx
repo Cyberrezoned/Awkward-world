@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -9,6 +10,7 @@ import { ProductCard } from '@/components/product/product-card';
 import { products } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import PersonalizedRecommendations from '@/components/recommendations/personalized-recommendations';
+import { ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-main');
@@ -80,7 +82,10 @@ export default function HomePage() {
           </motion.p>
           <motion.div variants={itemVariants}>
             <Button asChild size="lg" className="mt-8" variant="secondary">
-              <Link href="/shop">Shop Now</Link>
+              <Link href="/shop">
+                Shop Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
             </Button>
           </motion.div>
         </motion.div>

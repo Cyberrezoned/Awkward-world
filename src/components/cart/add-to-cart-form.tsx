@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useToast } from "@/hooks/use-toast";
+import { ShoppingBag } from "lucide-react";
 
 interface AddToCartFormProps {
     product: Product;
@@ -58,6 +60,7 @@ export function AddToCartForm({ product }: AddToCartFormProps) {
                 </RadioGroup>
             </div>
             <Button type="submit" size="lg" className="w-full mt-6">
+                <ShoppingBag className="mr-2 h-4 w-4" />
                 Add to Bag
             </Button>
         </form>

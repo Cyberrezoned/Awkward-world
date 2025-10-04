@@ -1,8 +1,9 @@
+
 "use client"
 
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, Trash2 } from "lucide-react";
+import { CreditCard, Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
 import { useCart } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";
 import {
@@ -37,7 +38,10 @@ export function CartSheet() {
         <div className="flex flex-1 flex-col items-center justify-center">
             <p className="text-lg font-medium text-muted-foreground">Your bag is empty.</p>
             <Button asChild variant="outline" className="mt-4">
-                <Link href="/shop">Start Shopping</Link>
+                <Link href="/shop">
+                    <ShoppingCart className="mr-2 h-4 w-4" />
+                    Start Shopping
+                </Link>
             </Button>
         </div>
       ) : (
@@ -95,7 +99,10 @@ export function CartSheet() {
             </div>
             <p className="mt-0.5 text-sm text-muted-foreground">Shipping and taxes calculated at checkout.</p>
             <div className="mt-6">
-              <Button className="w-full" size="lg">Checkout</Button>
+              <Button className="w-full" size="lg">
+                <CreditCard className="mr-2 h-4 w-4" />
+                Checkout
+              </Button>
             </div>
             <div className="mt-4 flex justify-center text-center text-sm text-muted-foreground">
               <p>

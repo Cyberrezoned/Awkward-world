@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import { Icons } from "@/components/icons";
 import { useUser } from "@/firebase";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const user = useUser();
@@ -58,7 +60,10 @@ export default function Footer() {
               <p className="mt-4 text-sm text-muted-foreground">Get updates on new drops and exclusive deals.</p>
               <form className="mt-4 flex">
                 <Input type="email" placeholder="Your email" className="min-w-0 flex-1" />
-                <Button type="submit" className="ml-2">Subscribe</Button>
+                <Button type="submit" className="ml-2">
+                  Subscribe
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
               </form>
             </div>
           </div>

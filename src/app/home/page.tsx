@@ -51,19 +51,29 @@ export default function HomePage() {
         )}
         <div className="absolute inset-0 bg-black/30" />
         <motion.div 
-          className="relative z-10 flex h-full flex-col items-start justify-end p-8 md:p-12 lg:p-16 text-left text-primary-foreground"
+          className="relative z-10 flex h-full flex-col items-start justify-start p-8 md:p-12 lg:p-16 text-left text-primary-foreground"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1 
-            className="font-headline text-6xl md:text-8xl lg:text-9xl"
+            className="font-headline text-5xl md:text-6xl lg:text-7xl"
             variants={itemVariants}
+            animate={{
+                scale: [1, 1.02, 1],
+                opacity: [1, 0.9, 1]
+            }}
+            transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatDelay: 2,
+                ease: "easeInOut"
+            }}
           >
             Define Your Awkward
           </motion.h1>
           <motion.p 
-            className="mt-4 max-w-2xl text-lg md:text-xl"
+            className="mt-4 max-w-lg text-base md:text-lg"
             variants={itemVariants}
           >
             A high-fashion brand that celebrates nonconformity.

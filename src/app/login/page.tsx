@@ -8,7 +8,6 @@ import Image from 'next/image';
 import { LoginForm } from "@/components/auth/login-form";
 import Link from "next/link";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { cn } from '@/lib/utils';
 
 // Array of images to cycle through for the background
 const backgroundImages = [
@@ -75,7 +74,7 @@ export default function LoginPage() {
             animate="visible"
             exit="exit"
             variants={formVariants}
-            className="relative z-10 w-full max-w-sm rounded-lg border bg-background/80 p-8 shadow-2xl backdrop-blur-md"
+            className="relative z-10 flex h-96 w-96 flex-col items-center justify-center rounded-lg border bg-background/80 p-8 shadow-2xl backdrop-blur-md"
           >
             <div className="mx-auto grid w-full gap-6">
               <div className="grid gap-2 text-center">

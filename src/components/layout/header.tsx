@@ -90,7 +90,10 @@ export default function Header() {
                             key={link.href}
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="text-foreground transition-colors hover:text-foreground/80"
+                            className={cn(
+                                "text-foreground transition-colors hover:text-foreground/80",
+                                pathname === link.href ? "font-bold" : ""
+                              )}
                           >
                             {link.label}
                           </Link>
@@ -119,10 +122,11 @@ export default function Header() {
                   </Link>
                   <nav className="flex items-center space-x-6 text-sm font-medium">
                     {navLinks.map((link) => (
-                      <Link
+                       <Link
                         key={link.href}
                         href={link.href}
-                        className="transition-colors hover:text-foreground/80"
+                        className="relative transition-colors nav-link-indicator"
+                        data-active={pathname === link.href}
                       >
                         {link.label}
                       </Link>

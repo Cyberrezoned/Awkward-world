@@ -1,11 +1,3 @@
-// Follow this pattern to import other Firebase services
-// import { getAuth } from 'firebase/auth';
-// import { getFirestore } from 'firebase/firestore';
-
-// const app = initializeApp(firebaseConfig);
-// export const auth = getAuth(app);
-// export const firestore = getFirestore(app);
-
 // IMPORTANT: Replace this with your actual Firebase config
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,

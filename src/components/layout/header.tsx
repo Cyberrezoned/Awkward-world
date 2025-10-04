@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import Logo from "@/components/logo";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
@@ -12,6 +13,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { UserNav } from "@/components/auth/user-nav";
 import { CartIcon } from "@/components/cart/cart-icon";
 import { cn } from "@/lib/utils";
+import { useAppState } from "@/hooks/use-app-state";
 
 const navLinks = [
   { href: "/shop", label: "Shop" },
@@ -20,6 +22,8 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const { isAuthenticated } = useAppState();
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -31,10 +35,8 @@ export default function Header() {
       setIsScrolled(currentScrollY > 20);
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
         setIsHidden(true);
       } else {
-        // Scrolling up
         setIsHidden(false);
       }
       setLastScrollY(currentScrollY);
@@ -44,6 +46,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  if (!isAuthenticated || pathname === '/') {
+    return null;
+  }
+
   return (
     <header className={cn(
         "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-transform duration-300",
@@ -52,7 +58,6 @@ export default function Header() {
       <div className={cn("container transition-all duration-300", isScrolled ? 'h-16' : 'h-20 flex items-center')}>
         <div className={cn("flex w-full items-center justify-between", isScrolled ? '' : 'flex-col')}>
 
-          {/* Top part of the header (visible when not scrolled) */}
           <div className={cn(
             "w-full justify-between items-center",
             isScrolled ? 'hidden' : 'flex'
@@ -70,7 +75,7 @@ export default function Header() {
                 </SheetTrigger>
                 <SheetContent side="left" className="pr-0">
                   <Link
-                    href="/"
+                    href="/home"
                     className="mr-6 flex items-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -94,7 +99,7 @@ export default function Header() {
               </Sheet>
             </div>
              <div className="flex-1 flex justify-center">
-              <Link href="/">
+              <Link href="/home">
                   <Logo isScrolled={isScrolled} />
               </Link>
             </div>
@@ -105,10 +110,9 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Scrolled Header Content & Bottom part of non-scrolled header */}
           <div className={cn("w-full flex items-center transition-all duration-300", isScrolled ? 'h-16' : 'h-12')}>
               <div className="hidden md:flex items-center">
-                <Link href="/" className={cn("mr-6", isScrolled ? 'block' : 'hidden')}>
+                <Link href="/home" className={cn("mr-6", isScrolled ? 'block' : 'hidden')}>
                   <Logo isScrolled={isScrolled} />
                 </Link>
                 <nav className="flex items-center space-x-6 text-sm font-medium">

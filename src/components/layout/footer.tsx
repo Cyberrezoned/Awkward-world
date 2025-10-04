@@ -1,10 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import { Icons } from "@/components/icons";
+import { useAppState } from "@/hooks/use-app-state";
 
 export default function Footer() {
+  const { isAuthenticated } = useAppState();
+  const pathname = usePathname();
+
+  if (!isAuthenticated || pathname === '/') {
+    return null;
+  }
+
   return (
     <footer className="border-t">
       <div className="container py-12">

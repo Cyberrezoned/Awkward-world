@@ -1,64 +1,135 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-
+import { useRouter } from 'next/navigation';
+import { Globe, Languages, Lock, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ProductCard } from '@/components/product/product-card';
-import { products } from '@/lib/data';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { useAppState } from '@/hooks/use-app-state';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import PersonalizedRecommendations from '@/components/recommendations/personalized-recommendations';
 
-export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-main');
-  const featuredProducts = products.slice(0, 4);
+export default function WelcomePage() {
+  const router = useRouter();
+  const { setIsAuthenticated } = useAppState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const heroImage = PlaceHolderImages.find((p) => p.id === 'hero-main');
+
+  const handleEnter = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Basic validation
+    if (email && password) {
+      setIsAuthenticated(true);
+      router.push('/home');
+    }
+  };
 
   return (
-    <div className="flex flex-col">
-      <section className="relative h-[calc(100vh-5rem)] w-full">
-        {heroImage && (
-             <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                data-ai-hint={heroImage.imageHint}
-                priority
-             />
-        )}
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-          <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl">
-            Define Your Awkward
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
+      {heroImage && (
+        <Image
+          src={heroImage.imageUrl}
+          alt="Background"
+          fill
+          className="object-cover object-center"
+          data-ai-hint={heroImage.imageHint}
+          priority
+        />
+      )}
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-md flex-col items-center p-8 text-center text-primary-foreground">
+        <div className="fade-in-up-staggered flex flex-col items-center">
+          <h1
+            className="font-headline text-6xl md:text-7xl"
+            style={{ animationDelay: '0.2s' }}
+          >
+            Welcome to AWKWORLD
           </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            A high-fashion brand that celebrates nonconformity.
+          <p
+            className="mt-2 text-sm uppercase tracking-widest"
+            style={{ animationDelay: '0.4s' }}
+          >
+            A Fashion Space for the Brave, Bold & Alté
           </p>
-          <Button asChild size="lg" className="mt-8">
-            <Link href="/shop">Shop Now</Link>
-          </Button>
         </div>
-      </section>
 
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <h2 className="mb-8 text-center font-headline text-4xl md:text-5xl">
-            Featured Collection
-          </h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+        <form
+          onSubmit={handleEnter}
+          className="mt-10 w-full space-y-4 fade-in-up"
+          style={{ animationDelay: '0.6s' }}
+        >
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="bg-background/80 pl-9 text-foreground placeholder:text-muted-foreground"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
-        </div>
-      </section>
-
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container">
-          <h2 className="mb-8 text-center font-headline text-4xl md:text-5xl">
-            Just For You
-          </h2>
-          <PersonalizedRecommendations />
-        </div>
-      </section>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              type="password"
+              placeholder="Password"
+              className="bg-background/80 pl-9 text-foreground placeholder:text-muted-foreground"
+              value={password}
+              onChange={(e) => setPassword(e_target_value)}
+              required
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Select>
+              <SelectTrigger className="w-full bg-background/80 text-foreground">
+                <Languages className="mr-2 h-4 w-4 text-muted-foreground" />
+                <SelectValue placeholder="Language" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="es">Español</SelectItem>
+                <SelectItem value="fr">Français</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select>
+              <SelectTrigger className="w-full bg-background/80 text-foreground">
+                <Globe className="mr-2 h-4 w-4 text-muted-foreground" />
+                <SelectValue placeholder="Location" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="us">United States</SelectItem>
+                <SelectItem value="gb">United Kingdom</SelectItem>
+                <SelectItem value="ca">Canada</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <Button
+            type="submit"
+            className="w-full rounded-none bg-primary font-bold uppercase tracking-widest text-primary-foreground"
+            size="lg"
+          >
+            ENTER
+          </Button>
+        </form>
+        <p
+          className="mt-8 font-headline text-lg font-bold text-primary-foreground glitch"
+          style={{ animationDelay: '0.8s' }}
+        >
+          ⚠️ If you aren’t ALTÉ, don’t sign in.
+        </p>
+      </div>
     </div>
   );
 }

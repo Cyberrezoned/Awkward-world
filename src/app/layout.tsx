@@ -5,6 +5,7 @@ import Header from '@/components/layout/header';
 import { Toaster } from '@/components/ui/toaster';
 import { CartProvider } from '@/hooks/use-cart';
 import Footer from '@/components/layout/footer';
+import { AppStateProvider } from '@/hooks/use-app-state';
 
 export const metadata: Metadata = {
   title: 'AWKWORLD E-Commerce',
@@ -26,18 +27,20 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <CartProvider>
-            <div className="flex min-h-screen flex-col">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
-            <Toaster />
-          </CartProvider>
+          <AppStateProvider>
+            <CartProvider>
+              <div className="flex min-h-screen flex-col">
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </div>
+              <Toaster />
+            </CartProvider>
+          </AppStateProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
     Avatar,
     AvatarFallback,
@@ -14,20 +16,29 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
   import Link from "next/link"
+  import { useAppState } from "@/hooks/use-app-state";
+import { useRouter } from "next/navigation";
   
   export function UserNav() {
+    const { isAuthenticated, setIsAuthenticated } = useAppState();
+    const router = useRouter();
+    
     // This would come from an auth context in a real app
     const user = {
         name: "Guest",
         email: "guest@example.com",
         avatar: "https://picsum.photos/seed/user-avatar/40/40"
     };
-    const isLoggedIn = false;
 
-    if (!isLoggedIn) {
+    const handleLogout = () => {
+      setIsAuthenticated(false);
+      router.push('/');
+    };
+
+    if (!isAuthenticated) {
         return (
-            <Button asChild variant="ghost">
-                <Link href="/login">Login</Link>
+            <Button asChild variant="ghost" onClick={() => router.push('/')}>
+                <Link href="/">Login</Link>
             </Button>
         )
     }
@@ -64,7 +75,7 @@ import {
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={handleLogout}>
             Log out
           </DropdownMenuItem>
         </DropdownMenuContent>

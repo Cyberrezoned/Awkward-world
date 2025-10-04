@@ -79,7 +79,7 @@ export default function HomePage() {
             A high-fashion brand that celebrates nonconformity.
           </motion.p>
           <motion.div variants={itemVariants}>
-            <Button asChild size="lg" className="mt-8">
+            <Button asChild size="lg" className="mt-8" variant="secondary">
               <Link href="/shop">Shop Now</Link>
             </Button>
           </motion.div>

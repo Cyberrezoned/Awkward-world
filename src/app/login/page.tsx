@@ -48,6 +48,8 @@ export default function LoginPage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.04,
+        repeat: Infinity,
+        repeatDelay: 5,
       },
     },
   };

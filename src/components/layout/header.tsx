@@ -15,11 +15,11 @@ import { UserNav } from "@/components/auth/user-nav";
 import { CartIcon } from "@/components/cart/cart-icon";
 import { cn } from "@/lib/utils";
 import { useAppState } from "@/hooks/use-app-state";
+import { ContactDialog } from "../contact/contact-dialog";
 
 const navLinks = [
   { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -98,6 +98,16 @@ export default function Header() {
                             {link.label}
                           </Link>
                         ))}
+                         <Link
+                            href="/contact"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={cn(
+                                "text-foreground transition-colors hover:text-foreground/80",
+                                pathname === "/contact" ? "font-bold" : ""
+                              )}
+                          >
+                            Contact
+                          </Link>
                       </div>
                     </div>
                   </SheetContent>
@@ -109,6 +119,7 @@ export default function Header() {
                 </Link>
               </div>
                <div className="flex flex-1 items-center justify-end space-x-2">
+                <ContactDialog />
                 <ThemeToggle />
                 <CartIcon />
                 <UserNav />
@@ -142,6 +153,7 @@ export default function Header() {
                 </div>
 
                  <div className={cn("items-center space-x-2", isScrolled ? 'flex' : 'hidden')}>
+                    <ContactDialog />
                     <ThemeToggle />
                     <CartIcon />
                     <UserNav />

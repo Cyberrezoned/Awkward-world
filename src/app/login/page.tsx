@@ -40,6 +40,25 @@ export default function LoginPage() {
     center: { opacity: 1 },
     exit: { opacity: 0 },
   };
+  
+  const welcomeText = "WELCOME TO AWKWORLD";
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.04,
+      },
+    },
+  };
+
+  const letterVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
 
   return (
     <div className="relative flex h-[calc(100vh-5rem)] w-full items-center justify-center overflow-hidden">
@@ -78,7 +97,18 @@ export default function LoginPage() {
           >
             <div className="mx-auto grid w-full gap-6">
               <div className="grid gap-2 text-center">
-                <h1 className="font-headline text-2xl">WELCOME TO AWKWORLD</h1>
+                 <motion.h1 
+                    className="font-headline text-2xl"
+                    variants={sentence}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                   {welcomeText.split("").map((char, index) => (
+                      <motion.span key={char + "-" + index} variants={letterVariant}>
+                        {char}
+                      </motion.span>
+                    ))}
+                </motion.h1>
               </div>
               <LoginForm />
               <div className="mt-4 text-center text-sm">

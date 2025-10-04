@@ -9,13 +9,17 @@ export default function WelcomePage() {
   const user = useUser();
 
   useEffect(() => {
-    if (user.data) {
-      router.push('/home');
-    } else {
-      router.push('/login');
+    // We only want to redirect once the loading is complete
+    if (!user.loading) {
+      if (user.data) {
+        router.push('/home');
+      } else {
+        router.push('/login');
+      }
     }
-  }, [user.data, router]);
+  }, [user.loading, user.data, router]);
 
+  // Render a consistent loading state on both server and client
   return (
     <div className="flex h-screen w-full items-center justify-center">
       <p>Loading...</p>

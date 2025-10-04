@@ -1,6 +1,6 @@
 'use server';
 
-import { getAuth, sendPasswordResetEmail } from 'firebase/admin/auth';
+import { getAuth, sendPasswordResetEmail } from 'firebase-admin/auth';
 import { z } from 'zod';
 import { adminApp } from '@/firebase/admin';
 

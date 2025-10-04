@@ -137,3 +137,13 @@ body {
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
 }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}

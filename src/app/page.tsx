@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/select';
 import { useAppState } from '@/hooks/use-app-state';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export default function WelcomePage() {
   const router = useRouter();
@@ -51,8 +52,8 @@ export default function WelcomePage() {
       <div className="relative z-10 mx-auto flex w-full max-w-md flex-col items-center p-8 text-center text-primary-foreground">
         <div className="fade-in-up-staggered flex flex-col items-center">
           <h1
-            className="font-headline text-6xl md:text-7xl typewriter"
-            style={{ animationDelay: '0.2s' }}
+            className={cn("font-headline text-6xl md:text-7xl typewriter float-animation")}
+            style={{ animationDelay: '0.2s', animationIterationCount: '1, infinite' }}
           >
             Welcome to AWKWORLD
           </h1>

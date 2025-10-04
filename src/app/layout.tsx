@@ -7,7 +7,7 @@ import { CartProvider } from '@/hooks/use-cart';
 import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'AWKWARD E-Commerce',
+  title: 'AWKWORLD E-Commerce',
   description: 'High-end, animated, and responsive e-commerce fashion.',
 };
 

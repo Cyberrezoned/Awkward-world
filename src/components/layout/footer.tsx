@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 flex flex-col items-center justify-between border-t pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} AWKWARD. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} AWKWORLD. All rights reserved.</p>
           <div className="mt-4 flex space-x-4 md:mt-0">
             <Link href="#" className="text-muted-foreground hover:text-foreground"><Icons.twitter className="h-5 w-5" /></Link>
             <Link href="#" className="text-muted-foreground hover:text-foreground"><Icons.instagram className="h-5 w-5" /></Link>

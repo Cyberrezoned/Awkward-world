@@ -5,7 +5,7 @@ interface LogoProps {
 }
 
 const Logo = ({ isScrolled = false }: LogoProps) => {
-  const brandName = "AWKWARD";
+  const brandName = "AWKWORLD";
 
   return (
     <div

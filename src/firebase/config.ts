@@ -1,4 +1,4 @@
-// IMPORTANT: Replace this with your actual Firebase config
+// IMPORTANT: This file is populated by the build process and should not be modified.
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,

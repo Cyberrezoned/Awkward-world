@@ -1,3 +1,106 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-main",
+      "description": "A fashion model posing in a striking outfit, representing the AWKWARD brand's edgy style.",
+      "imageUrl": "https://images.unsplash.com/photo-1627577279497-4b24bf1021b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYXNoaW9uJTIwbW9kZWx8ZW58MHx8fHwxNzU5NTg4NTg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion model"
+    },
+    {
+      "id": "product-1-a",
+      "description": "Front view of the 'Chromatic Chaos' oversized tee.",
+      "imageUrl": "https://images.unsplash.com/photo-1468283268201-f31115a19e2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmFwaGljJTIwdGVlfGVufDB8fHx8MTc1OTU4NjQ0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "graphic tee"
+    },
+    {
+      "id": "product-1-b",
+      "description": "Model wearing the 'Chromatic Chaos' oversized tee.",
+      "imageUrl": "https://images.unsplash.com/photo-1611679716418-de755158e027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwbW9kZWwlMjBzaGlydHxlbnwwfHx8fDE3NTk1OTUyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion model shirt"
+    },
+    {
+      "id": "product-2-a",
+      "description": "Front view of the 'Deconstructed Dream' blazer.",
+      "imageUrl": "https://images.unsplash.com/photo-1628565931779-4f4f0b4f578a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkZWNvbnN0cnVjdGVkJTIwYmxhemVyfGVufDB8fHx8MTc1OTU5NTI0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "deconstructed blazer"
+    },
+    {
+      "id": "product-2-b",
+      "description": "Model wearing the 'Deconstructed Dream' blazer.",
+      "imageUrl": "https://images.unsplash.com/photo-1636413383218-6291a7b9dcd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmYXNoaW9uJTIwbW9kZWwlMjBibGF6ZXJ8ZW58MHx8fHwxNzU5NTk1MjQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion model blazer"
+    },
+    {
+      "id": "product-3-a",
+      "description": "Asymmetrical 'Glitch' skirt.",
+      "imageUrl": "https://images.unsplash.com/photo-1646054224885-f978f5798312?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhc3ltbWV0cmljYWwlMjBza2lydHxlbnwwfHx8fDE3NTk1OTUyNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "asymmetrical skirt"
+    },
+    {
+      "id": "product-3-b",
+      "description": "Model wearing the 'Glitch' skirt.",
+      "imageUrl": "https://images.unsplash.com/photo-1655204936353-5d342ff1e02f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwbW9kZWwlMjBza2lydHxlbnwwfHx8fDE3NTk1OTUyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion model skirt"
+    },
+    {
+      "id": "product-4-a",
+      "description": "'Echo Chamber' echo-wash jeans.",
+      "imageUrl": "https://images.unsplash.com/photo-1592756068352-e2853be81d1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaXN0cmVzc2VkJTIwamVhbnN8ZW58MHx8fHwxNzU5NTcyMDEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "distressed jeans"
+    },
+    {
+      "id": "product-4-b",
+      "description": "Model wearing the 'Echo Chamber' jeans.",
+      "imageUrl": "https://images.unsplash.com/photo-1682771420713-61e71d04bb33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2RlbCUyMGplYW5zfGVufDB8fHx8MTc1OTU5NTI0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "model jeans"
+    },
+    {
+      "id": "product-5-a",
+      "description": "'Static Shift' dress.",
+      "imageUrl": "https://images.unsplash.com/photo-1739519962473-470368b48a6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhdmFudC1nYXJkZSUyMGRyZXNzfGVufDB8fHx8MTc1OTU5NTI0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "avant-garde dress"
+    },
+    {
+      "id": "product-5-b",
+      "description": "Model wearing the 'Static Shift' dress.",
+      "imageUrl": "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2RlbCUyMGRyZXNzfGVufDB8fHx8MTc1OTU5NTI0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "model dress"
+    },
+    {
+      "id": "product-6-a",
+      "description": "'Vaporwave' trench coat.",
+      "imageUrl": "https://images.unsplash.com/photo-1663343683182-70885ae0a792?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0cmVuY2glMjBjb2F0fGVufDB8fHx8MTc1OTU0MjM5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trench coat"
+    },
+    {
+      "id": "product-6-b",
+      "description": "Model wearing the 'Vaporwave' trench coat.",
+      "imageUrl": "https://images.unsplash.com/photo-1707677906618-538c2c67d270?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2RlbCUyMHRyZW5jaCUyMGNvYXR8ZW58MHx8fHwxNzU5NTk1MjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "model trench coat"
+    },
+    {
+      "id": "product-7-a",
+      "description": "'Binary' boots.",
+      "imageUrl": "https://images.unsplash.com/photo-1621738506968-5706da1eebc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwbGF0Zm9ybSUyMGJvb3RzfGVufDB8fHx8MTc1OTU5NTI0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "platform boots"
+    },
+    {
+      "id": "product-7-b",
+      "description": "Model wearing the 'Binary' boots.",
+      "imageUrl": "https://images.unsplash.com/photo-1579446498101-00e1d9cde5bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2RlbCUyMGJvb3RzfGVufDB8fHx8MTc1OTU5NTI0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "model boots"
+    },
+    {
+      "id": "product-8-a",
+      "description": "'Glitch Garden' floral hoodie.",
+      "imageUrl": "https://images.unsplash.com/photo-1652212029659-771ff516b0b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmbG9yYWwlMjBob29kaWV8ZW58MHx8fHwxNzU5NTk1MjQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "floral hoodie"
+    },
+    {
+      "id": "product-8-b",
+      "description": "Model wearing 'Glitch Garden' floral hoodie.",
+      "imageUrl": "https://images.unsplash.com/photo-1618333272197-2ee791c42963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2RlbCUyMGhvb2RpZXxlbnwwfHx8fDE3NTk1OTUyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "model hoodie"
+    }
+  ]
 }

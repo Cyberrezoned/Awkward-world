@@ -51,7 +51,7 @@ export default function HomePage() {
         )}
         <div className="absolute inset-0 bg-black/30" />
         <motion.div 
-          className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground"
+          className="relative z-10 flex h-full flex-col items-start justify-end p-8 md:p-12 lg:p-16 text-left text-primary-foreground"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

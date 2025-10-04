@@ -14,7 +14,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { UserNav } from "@/components/auth/user-nav";
 import { CartIcon } from "@/components/cart/cart-icon";
 import { cn } from "@/lib/utils";
-import { useAppState } from "@/hooks/use-app-state";
+import { useUser } from "@/firebase";
 import { ContactDialog } from "../contact/contact-dialog";
 
 const navLinks = [
@@ -23,7 +23,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const { isAuthenticated } = useAppState();
+  const user = useUser();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,7 +47,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  if (!isAuthenticated || pathname === '/') {
+  const noAuthPages = ['/login', '/signup', '/'];
+  if (user.loading || !user.data || noAuthPages.includes(pathname)) {
     return null;
   }
 
@@ -119,7 +120,9 @@ export default function Header() {
                 </Link>
               </div>
                <div className="flex flex-1 items-center justify-end space-x-2">
-                <ContactDialog />
+                <div className="hidden md:flex">
+                  <ContactDialog />
+                </div>
                 <ThemeToggle />
                 <CartIcon />
                 <UserNav />

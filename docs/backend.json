@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Represents a user's public profile and settings.",
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "The user's public display name."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's primary email address."
+        },
+        "photoURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of the user's profile picture."
+        },
+        "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the user account was created."
+        }
+      },
+      "required": ["displayName", "email"]
+    },
+    "Product": {
+        "title": "Product",
+        "description": "Represents an item available for sale in the e-commerce store.",
+        "type": "object",
+        "properties": {
+            "name": { "type": "string" },
+            "description": { "type": "string" },
+            "price": { "type": "number" },
+            "category": { "type": "string" },
+            "sizes": { "type": "array", "items": { "type": "string" } },
+            "imageUrl": { "type": "string", "format": "uri" },
+            "altImageUrl": { "type": "string", "format": "uri" }
+        },
+        "required": ["name", "price", "category", "sizes", "imageUrl"]
+    },
+    "CartItem": {
+        "title": "Cart Item",
+        "description": "Represents a single item within a user's shopping cart.",
+        "type": "object",
+        "properties": {
+            "productId": { "type": "string" },
+            "name": { "type": "string" },
+            "price": { "type": "number" },
+            "image": { "type": "string", "format": "uri" },
+            "size": { "type": "string" },
+            "quantity": { "type": "number" }
+        },
+        "required": ["productId", "name", "price", "image", "size", "quantity"]
+    }
+  },
+  "auth": {
+    "providers": ["email", "google.com"]
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Collection of all available products."
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Stores individual user profile information."
+    },
+    "/users/{userId}/cart/{itemId}": {
+        "schema": { "$ref": "#/entities/CartItem" },
+        "description": "Sub-collection for items in a user's shopping cart."
+    }
+  }
+}

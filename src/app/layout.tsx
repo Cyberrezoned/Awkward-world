@@ -5,7 +5,7 @@ import Header from '@/components/layout/header';
 import { Toaster } from '@/components/ui/toaster';
 import { CartProvider } from '@/hooks/use-cart';
 import Footer from '@/components/layout/footer';
-import { AppStateProvider } from '@/hooks/use-app-state';
+import FirebaseClientProvider from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: 'AWKWORLD E-Commerce',
@@ -31,7 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AppStateProvider>
+          <FirebaseClientProvider>
             <CartProvider>
               <div className="flex min-h-screen flex-col">
                 <Header />
@@ -40,7 +40,7 @@ export default function RootLayout({
               </div>
               <Toaster />
             </CartProvider>
-          </AppStateProvider>
+          </FirebaseClientProvider>
         </ThemeProvider>
       </body>
     </html>

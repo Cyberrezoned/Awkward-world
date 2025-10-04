@@ -1,0 +1,32 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Products: Publicly readable, admin-only write access.
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if false; // In a real app, you'd check for an admin claim.
+    }
+
+    // User Profiles: Users can create their own profile and only read/update their own.
+    match /users/{userId} {
+      allow read, update, delete: if isSignedIn() && isOwner(userId);
+      allow create: if isSignedIn();
+    }
+
+    // User Carts: Users can only manage their own shopping cart.
+    match /users/{userId}/cart/{itemId} {
+        allow read, write: if isSignedIn() && isOwner(userId);
+    }
+  }
+}

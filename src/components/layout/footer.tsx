@@ -6,13 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import { Icons } from "@/components/icons";
-import { useAppState } from "@/hooks/use-app-state";
+import { useUser } from "@/firebase";
 
 export default function Footer() {
-  const { isAuthenticated } = useAppState();
+  const user = useUser();
   const pathname = usePathname();
 
-  if (!isAuthenticated || pathname === '/') {
+  const noAuthPages = ['/login', '/signup', '/'];
+  if (user.loading || !user.data || noAuthPages.includes(pathname)) {
     return null;
   }
 

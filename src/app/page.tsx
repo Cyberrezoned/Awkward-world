@@ -51,7 +51,7 @@ export default function WelcomePage() {
       <div className="relative z-10 mx-auto flex w-full max-w-md flex-col items-center p-8 text-center text-primary-foreground">
         <div className="fade-in-up-staggered flex flex-col items-center">
           <h1
-            className="font-headline text-6xl md:text-7xl"
+            className="font-headline text-6xl md:text-7xl typewriter"
             style={{ animationDelay: '0.2s' }}
           >
             Welcome to AWKWORLD
@@ -87,7 +87,7 @@ export default function WelcomePage() {
               placeholder="Password"
               className="bg-background/80 pl-9 text-foreground placeholder:text-muted-foreground"
               value={password}
-              onChange={(e) => setPassword(e_target_value)}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -117,7 +117,7 @@ export default function WelcomePage() {
           </div>
           <Button
             type="submit"
-            className="w-full rounded-none bg-primary font-bold uppercase tracking-widest text-primary-foreground"
+            className="w-full rounded-none bg-primary font-bold uppercase tracking-widest text-primary-foreground hover:glitch"
             size="lg"
           >
             ENTER

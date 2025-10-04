@@ -78,7 +78,7 @@ export default function LoginPage() {
           >
             <div className="mx-auto grid w-full gap-6">
               <div className="grid gap-2 text-center">
-                <h1 className="font-headline text-3xl">Login</h1>
+                <h1 className="font-headline text-3xl">WELCOME TO AWKWORLD</h1>
               </div>
               <LoginForm />
               <div className="mt-4 text-center text-sm">
